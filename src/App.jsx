@@ -1,14 +1,8 @@
-import Hello from "./components/Hello";
-const App = () => {
-  const nimi = "Pekka";
-  const ika = 10;
+//https://fullstackopen.com/osa1/komponentin_tila_ja_tapahtumankasittely
 
-  return (
-    <div>
-      <h1>Greetings</h1>
-      <Hello name="Maya" age={26 + 10} />
-      <Hello name={nimi} age={ika} />
-    </div>
-  );
+const App = (props) => {
+  const { counter } = props;
+  return <div>{counter}</div>;
 };
+
 export default App;
