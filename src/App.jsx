@@ -1,9 +1,10 @@
 //https://fullstackopen.com/osa1/komponentin_tila_ja_tapahtumankasittely
-//Tilan päivitys tapahtuu asynkronisesti
+//Ehdollinen renderöinti
 
 import { useState } from "react";
 import Button from "./components/Button";
 import Display from "./components/Display";
+import History from "./components/History";
 
 const App = () => {
   const [left, setLeft] = useState(0);
@@ -28,11 +29,10 @@ const App = () => {
   return (
     <div>
       {left}
-      <button onClick={handleLeftClick}>left</button>
-      <button onClick={handleRightClick}>right</button>
+      <Button handleClick={handleLeftClick} text="left" />
+      <Button handleClick={handleRightClick} text="right" />
       {right}
-      <p>{allClicks.join(" ")}</p>
-      <p>total {total}</p>
+      <History allClicks={allClicks} />
     </div>
   );
 };
