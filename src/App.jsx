@@ -1,5 +1,5 @@
 //https://fullstackopen.com/osa1/komponentin_tila_ja_tapahtumankasittely
-//Ehdollinen renderöinti
+//React-sovellusten debuggaus
 
 import { useState } from "react";
 import Button from "./components/Button";
