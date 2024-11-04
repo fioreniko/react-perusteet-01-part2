@@ -1,2 +1,2 @@
-const Display = ({ counter }) => <div>{counter}</div>;
+const Display = (props) => <div>{props.value}</div>;
 export default Display;

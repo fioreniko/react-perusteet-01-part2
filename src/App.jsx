@@ -1,7 +1,10 @@
 //https://fullstackopen.com/osa1/komponentin_tila_ja_tapahtumankasittely
-//Funktion palauttava funktio
+//Tapahtumankäsittelijän vieminen alikomponenttiin
 
 import { useState } from "react";
+import Button from "./components/Button";
+import Display from "./components/Display";
+
 const App = () => {
   const [value, setValue] = useState(10);
 
@@ -12,10 +15,10 @@ const App = () => {
 
   return (
     <div>
-      <div>{value}</div>
-      <button onClick={() => setToValue(1000)}>thousand</button>
-      <button onClick={() => setToValue(0)}>reset</button>
-      <button onClick={() => setToValue(value + 1)}>increment</button>
+      <Display value={value} />
+      <Button handleClick={() => setToValue(1000)} text="thousand" />
+      <Button handleClick={() => setToValue(0)} text="reset" />
+      <Button handleClick={() => setToValue(value + 1)} text="increment" />
     </div>
   );
 };
