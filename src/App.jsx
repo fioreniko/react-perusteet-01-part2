@@ -1,19 +1,21 @@
 //https://fullstackopen.com/osa1/komponentin_tila_ja_tapahtumankasittely
-//Tapahtumankäsittely uudelleen
+//Funktion palauttava funktio
 
 import { useState } from "react";
 const App = () => {
   const [value, setValue] = useState(10);
 
-  const handleClick = () => {
-    console.log("clicked the button");
-    setValue(0);
+  const setToValue = (newValue) => {
+    console.log("value now", newValue); // print the new value to console
+    setValue(newValue);
   };
 
   return (
     <div>
-      {value}
-      <button onClick={handleClick}>button</button>
+      <div>{value}</div>
+      <button onClick={() => setToValue(1000)}>thousand</button>
+      <button onClick={() => setToValue(0)}>reset</button>
+      <button onClick={() => setToValue(value + 1)}>increment</button>
     </div>
   );
 };
